@@ -1,2 +1,2 @@
-export const ALCHEMY_ID = 'U7IwDR13K4Er86rRF7ejJ6CaAAV7oT14';
+export const ALCHEMY_ID = 'tBSuoffAMZOudBkbcWa3k0zTN1VNiPKE';
 export const INFURA_ID = '6b5c9005d3dd48e588dc6967a984417d';

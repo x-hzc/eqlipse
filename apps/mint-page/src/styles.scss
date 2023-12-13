@@ -4,5 +4,91 @@
 @tailwind utilities;
 
 .input-control {
-    display: flex;
+  display: flex;
+}
+
+.video-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.input-control.mint-container {
+  display: flex;
+  @apply border-2 border-white;
+  @apply rounded-md;
+  @apply p-1;
+  @apply my-2;
+  display: none;
+}
+
+.mint-btn,
+.connect-button {
+  @apply bg-white;
+  @apply border-2 border-white;
+  @apply text-primary;
+  @apply rounded-md;
+  @apply p-1;
+  @apply ml-1;
+  @apply mt-6;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  &:disabled {
+    @apply bg-gray-400;
+    @apply text-white;
+    cursor: not-allowed;
+  }
+}
+
+.status-class {
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+body {
+  @apply bg-primary;
+  @apply text-white;
+}
+
+:disabled {
+  cursor: not-allowed;
+}
+
+.input-control {
+  @apply bg-black;
+  @apply text-white;
+  @apply rounded-md;
+  @apply p-1;
+  @apply my-2;
+  @apply px-4;
+  @apply py-0;
+
+  margin: 20px auto;
+}
+
+.mint-btn {
+  background-color: #8bbbc1;
+  color: white;
+}
+
+.connect-button {
+  background-color: #8bbbc1;
+  color: white;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.distressed-line {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  top: 86px;
+  z-index: 2;
+  width: 95%;
+  -webkit-user-select: none;
+  user-select: none;
 }
