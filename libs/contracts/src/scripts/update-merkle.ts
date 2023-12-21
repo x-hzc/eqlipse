@@ -29,7 +29,7 @@ async function main() {
 
   console.log(phaseOne.getHexRoot(), await Contract.merkleTreeRoot(2));
   console.log(phaseTwo.getHexRoot(), await Contract.merkleTreeRoot(3));
-  console.log(phaseTwo.getHexRoot(), await Contract.merkleTreeRoot(4));
+  console.log(phaseThree.getHexRoot(), await Contract.merkleTreeRoot(4));
 }
 
 main().catch((error) => {
