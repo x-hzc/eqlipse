@@ -3,6 +3,30 @@
 @tailwind base;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Jack Armstrong';
+  src: url('/assets/fonts/JackArmstrong.woff2') format('woff2'),
+    url('/assets/fonts/JackArmstrong.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Eurostile BQ';
+  src: url('/assets/fonts/EurostileExt-Med.woff2') format('woff2'),
+    url('/assets/fonts/EurostileExt-Med.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Eurostile BQ';
+  font-weight: 500;
+  font-style: normal;
+}
+
 .input-control {
   display: flex;
 }
@@ -19,7 +43,6 @@
   display: flex;
   @apply border-2 border-white;
   @apply rounded-md;
-  @apply p-1;
   @apply my-2;
   display: none;
 }
@@ -58,21 +81,36 @@ body {
   cursor: not-allowed;
 }
 
-.input-control {
-  @apply bg-black;
-  @apply text-white;
-  @apply rounded-md;
-  @apply p-1;
-  @apply my-2;
-  @apply px-4;
-  @apply py-0;
-
-  margin: 20px auto;
+.input-control.flex {
+  // @apply bg-black;
+  // @apply text-white;
+  // @apply rounded-md;
+  // @apply p-1;
+  // @apply my-2;
+  // @apply px-4;
+  // @apply py-0;
+  background-image: url('assets/images/number-btn.png');
+  background-color: transparent;
+  border-color: transparent;
+  min-width: 156px;
+  color: white;
+  display: flex;
+  height: 84px;
+  margin: 10px;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .mint-btn {
-  background-color: #8bbbc1;
-  color: white;
+  background-image: url('assets/images/mint-btn.png');
+  background-color: transparent;
+  border-color: transparent;
+  min-width: 143px;
+  height: 78px;
+  background-size: 100%;
+  background-position: center;
+  color: black;
+  margin-top: 18px;
 }
 
 .connect-button {
@@ -91,4 +129,72 @@ body {
   width: 95%;
   -webkit-user-select: none;
   user-select: none;
+}
+
+.mint-container {
+  background-size: 100%;
+  border-radius: 10px;
+  padding-top: 20px;
+  font-family: 'Eurostile BQ';
+  overflow: hidden;
+  border: 7px solid #8ac0c6;
+  box-shadow: inset 0 0 12px #8ac0c6, 0 0 12px #8ac0c6;
+  color: white;
+}
+
+.home-mint-section-mint-case-image {
+  max-width: 250px;
+  animation: float 2s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(15px);
+  }
+}
+
+.menu-custom {
+  position: fixed;
+  width: 100vw;
+  height: 79px;
+  color: #fff;
+  inset: 0;
+  opacity: 1;
+  z-index: 3;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  -webkit-mask: linear-gradient(black 100%, transparent);
+  mask: linear-gradient(black 100%, transparent);
+}
+
+.connect-btn-new {
+  border: 2px solid #8ac0c6;
+  padding-top: 10px;
+  padding-bottom: 3px;
+  border-radius: 25px;
+  text-align: center;
+  color: #e3f5ff;
+  font-size: 20px;
+  text-shadow: 0px 0px 12px #8ac0c6;
+  box-shadow: inset 0 0 10px #8ac0c6, 0 0 40px #8ac0c6;
+  background-color: #62c2ff1c;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out, text-shadow 0.2s ease-in-out,
+    border 0.2s ease-in-out;
+  margin-top: 40px;
+}
+
+.heading-style {
+  font-size: 33px;
+  color: #e3f5ff;
+  text-shadow: 0px 0px 12px #8ac0c6;
+}
+
+.small-heading-style {
+  font-size: 26px;
+    color: #edebff;
+    text-shadow: 0px 0px 12px #7185fa;
 }

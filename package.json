@@ -19,7 +19,7 @@
   "private": true,
   "dependencies": {
     "@chocolate-factory/contracts": "^1.0.50",
-    "@chocolate-factory/dapp": "1.0.27",
+    "@chocolate-factory/dapp": "1.0.29",
     "@chocolate-factory/merkle": "^0.0.7",
     "@chocolate-factory/nx-dapp": "^0.0.51",
     "@chocolate-factory/nx-solidity": "^0.0.4",
