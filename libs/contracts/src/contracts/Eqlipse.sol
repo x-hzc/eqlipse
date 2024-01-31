@@ -3,12 +3,22 @@ pragma solidity ^0.8.17;
 import "@chocolate-factory/contracts/token/ERC721/presets/MultiStageBase.sol";
 
 contract Eqlipse is MultiStageBase {
-    bool public isCollectionTransferable;
+ bool public isCollectionTransferable;
+
+  function _startTokenId()
+    internal
+    pure
+    override(ERC721AUpgradeable)
+    returns (uint256)
+  {
+    return 1;
+  }
 
   function initialize (Args memory args) public initializer {
     __Base_init(args);
-    isCollectionTransferable = true;
+     isCollectionTransferable = false;
   }
+
   function toggleTransfer() public onlyAdmin() {
     isCollectionTransferable = !isCollectionTransferable;
   }
@@ -17,7 +27,7 @@ contract Eqlipse is MultiStageBase {
     internal
     override(ERC721AUpgradeable){
     if(from != address(0) && isCollectionTransferable == false) {
-        revert("Blueprint: Transfer Paused");
+        revert("Eqlipse: Transfer Is Disabled");
     }
     super._beforeTokenTransfers(from, to, startTokenId, quantity);
   }

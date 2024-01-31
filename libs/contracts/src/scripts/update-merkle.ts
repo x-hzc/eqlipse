@@ -8,7 +8,7 @@ import {
 async function main() {
   const Contract = await ethers.getContractAt(
     'Eqlipse',
-    '0x61c20bc3d6d5c370f6e7a816e45e27feaac7bd3d'
+    '0xB111fdE893e97959155A8Cb23ac19775eA84c638'
   );
 
   const phaseOne = buildMerkleTree(stageOne);

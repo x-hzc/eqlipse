@@ -117,21 +117,29 @@ export function App() {
       <div className="z-50 text-white">
         {/* <img src="/assets/images/menu.png" alt="" /> */}
         <div className="fixed w-full menu-custom">
-          <div className="flex justify-between max-w-[1200px] mx-auto">
+          <div className="flex justify-between max-w-[1200px] mx-auto px-4 items-center">
             <img
               src="/assets/images/eqlipse.png"
               className="w-[100px] mt-5"
               alt=""
             />
             <div className="hidden md:flex justify-between space-x-14 text-xs uppercase mt-10">
-              <a href="">About</a>
-              <a href="">Mint</a>
-              <a href="">Team</a>
-              <a href="">FAQ</a>
+              <a href="https://eqlipse.io/" target="_blank">
+                About
+              </a>
+              <a href="https://eqlipse.io/" target="_blank">
+                Mint
+              </a>
+              <a href="https://eqlipse.io/" target="_blank">
+                Team
+              </a>
+              <a href="https://eqlipse.io/" target="_blank">
+                FAQ
+              </a>
             </div>
 
             <div className="flex justify-between space-x-4 mt-4">
-              <a href="">
+              <a href="https://opensea.com">
                 <img
                   className="max-w-[33px]"
                   src="/assets/images/opensea.png"
@@ -139,14 +147,14 @@ export function App() {
                 />
               </a>
 
-              <a href="">
+              <a href="https://twitter.com/eqlipsenft">
                 <img
                   className="max-w-[33px]"
                   src="/assets/images/x.png"
                   alt=""
                 />
               </a>
-              <a href="">
+              <a href="https://discord.com/invite/eqlipse">
                 <img
                   className="max-w-[33px]"
                   src="/assets/images/discord.png"
@@ -172,34 +180,35 @@ export function App() {
             </div>
           </>
         )}
-        <div className="max-w-[700px] mx-auto mint-container rounded-2xl text-white px-4 py-0 grid md:grid-cols-2 gap-4 ">
-          <div className="order-2  md:order-1">
-            <div className="text-center uppercase mt-10 small-heading-style ">
-              {controller.currentStageId === multiStage.Disabled && (
-                <>
-                  <span> Mint is not live yet</span> <br />
-                </>
-              )}
+        <div className="px-4">
+          <div className="max-w-[700px] mx-auto mint-container rounded-2xl text-white px-4 py-0 grid md:grid-cols-2 gap-4 ">
+            <div className="order-2  md:order-1">
+              <div className="text-center uppercase mt-10 small-heading-style ">
+                {controller.currentStageId === multiStage.Disabled && (
+                  <>
+                    <span> Mint is not live yet</span> <br />
+                  </>
+                )}
 
-              {controller.currentStageId === multiStage.stageOne && (
-                <span>VIP Members Stage</span>
-              )}
+                {controller.currentStageId === multiStage.stageOne && (
+                  <span>VIP Members Stage</span>
+                )}
 
-              {controller.currentStageId === multiStage.stageTwo && (
-                <span>
-                  <span>Presale Stage</span>
-                </span>
-              )}
+                {controller.currentStageId === multiStage.stageTwo && (
+                  <span>
+                    <span>Presale Stage</span>
+                  </span>
+                )}
 
-              {controller.currentStageId === multiStage.stageThree && (
-                <span>FCFS Stage</span>
-              )}
+                {controller.currentStageId === multiStage.stageThree && (
+                  <span>FCFS Stage</span>
+                )}
 
-              {controller.currentStageId === multiStage.PublicMint && (
-                <span>Public Mint</span>
-              )}
+                {controller.currentStageId === multiStage.PublicMint && (
+                  <span>Public Mint</span>
+                )}
 
-              {/* {controller.currentStageId !== multiStage.Disabled && (
+                {/* {controller.currentStageId !== multiStage.Disabled && (
               <div>
                 {stageOneEligible ? (
                   <div className="text-lg mb-5">
@@ -224,64 +233,70 @@ export function App() {
                 )}
               </div>
             )} */}
-            </div>
-            {account ? (
-              <>
-                <div className="text-center mt-4 heading-style">
-                  {stageOneEligible ? (
-                    <div className="text-lg mb-5">
-                      <span>Eligible for VIP Members Stage</span>
-                    </div>
-                  ) : stageTwoEligible ? (
-                    <div className="text-lg mb-5">
-                      <span>Eligible for Presale Stage</span>
-                    </div>
-                  ) : stageThreeEligible ? (
-                    <div className="text-lg mb-5">
-                      <span>Eligible for FCFS Stage</span>
-                    </div>
-                  ) : (
-                    <div className="text-lg mb-5">
-                      <span className="text-white">
-                        Eligible for public mint
-                      </span>
-                    </div>
-                  )}
-                </div>
-                <div className="w-full mx-auto text-center">
-                  <MintForm
-                    containerClassName="hidden"
-                    buttonText="Mint"
-                    controller={controller}
-                    statusClassNames=""
-                    mintButtonClassNames="mint-btn"
-                    inputsControlClassNames="flex flex-row justify-between input-control"
-                    inputButtonsClassNames=""
-                    inputAmountClassNames=""
-                  />
-                  {/* {controller.currentStageId !== multiStage.Disabled && (
+              </div>
+              {account ? (
+                <>
+                  <div className="text-center mt-4 heading-style">
+                    {stageOneEligible && (
+                      <div className="text-lg mb-5">
+                        <span>Eligible for VIP Members Stage</span>
+                      </div>
+                    )}
+                    {stageTwoEligible && (
+                      <div className="text-lg mb-5">
+                        <span>Eligible for Presale Stage</span>
+                      </div>
+                    )}
+                    {stageThreeEligible && (
+                      <div className="text-lg mb-5">
+                        <span>Eligible for FCFS Stage</span>
+                      </div>
+                    )}
+                    {!stageOneEligible &&
+                      !stageTwoEligible &&
+                      !stageThreeEligible && (
+                        <div className="text-lg mb-5">
+                          <span className="text-white">
+                            Eligible for public mint
+                          </span>
+                        </div>
+                      )}
+                  </div>
+                  <div className="w-full mx-auto text-center">
+                    <MintForm
+                      containerClassName="hidden"
+                      buttonText="Mint"
+                      controller={controller}
+                      statusClassNames=""
+                      mintButtonClassNames="mint-btn"
+                      inputsControlClassNames="flex flex-row justify-between input-control"
+                      inputButtonsClassNames=""
+                      inputAmountClassNames=""
+                    />
+                    {/* {controller.currentStageId !== multiStage.Disabled && (
                     <div>{controller.totalPrice} ETH</div>
                   )} */}
+                  </div>
+                </>
+              ) : (
+                <div className="w-8/12 mx-auto">
+                  <ConnectButton
+                    account={account || ''}
+                    connect={connect}
+                    disconnect={deactivate}
+                    connectButtonClassNames="connect-btn-new"
+                    disconnectButtonClassNames=""
+                  ></ConnectButton>
                 </div>
-              </>
-            ) : (
-              <div className="w-8/12 mx-auto">
-                <ConnectButton
-                  account={account || ''}
-                  connect={connect}
-                  disconnect={deactivate}
-                  connectButtonClassNames="connect-btn-new"
-                  disconnectButtonClassNames=""
-                ></ConnectButton>
-              </div>
-            )}
-          </div>
-          <div className="order-1 md:order-2 home-mint-section-mint-case-image">
-            <img
-              src="/assets/images/box.png"
-              className="mx-auto max-w-[200px]"
-              alt=""
-            />
+              )}
+            </div>
+            <div className="order-1 md:order-2 home-mint-section-mint-case-image">
+              <img
+                src="/assets/images/box.png"
+                className="mx-auto max-w-[200px]"
+                alt=""
+              />
+            </div>
           </div>
         </div>
       </div>

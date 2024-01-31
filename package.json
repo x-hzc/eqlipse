@@ -6,15 +6,15 @@
     "netlify": "netlify functions:serve --functions ./apps/api/src --port 3300",
     "cache-clean": "TS_NODE_PROJECT=./libs/contracts/tsconfig.json npx hardhat clean --config ./libs/contracts/hardhat.config.ts",
     "hardhat-compile": "TS_NODE_PROJECT=./libs/contracts/tsconfig.json npx hardhat compile --config ./libs/contracts/hardhat.config.ts --network localhost",
-    "hardhat-deploy": "TS_NODE_PROJECT=./libs/contracts/tsconfig.json npx hardhat run ./libs/contracts/src/scripts/deploy.ts --config ./libs/contracts/hardhat.config.ts --network goerli",
-    "hardhat-script": "TS_NODE_PROJECT=./libs/contracts/tsconfig.json npx hardhat run ./libs/contracts/src/scripts/upgrade.ts --config ./libs/contracts/hardhat.config.ts --network goerli",
+    "hardhat-deploy": "TS_NODE_PROJECT=./libs/contracts/tsconfig.json npx hardhat run ./libs/contracts/src/scripts/deploy.ts --config ./libs/contracts/hardhat.config.ts --network mainnet",
+    "hardhat-script": "TS_NODE_PROJECT=./libs/contracts/tsconfig.json npx hardhat run ./libs/contracts/src/scripts/upgrade.ts --config ./libs/contracts/hardhat.config.ts --network mainnet",
     "hardhat-console": "TS_NODE_PROJECT=./libs/contracts/tsconfig.json npx hardhat console --config ./libs/contracts/hardhat.config.ts --network localhost",
     "hardhat-test": "TS_NODE_PROJECT=./libs/contracts/tsconfig.json npx hardhat test --config ./libs/contracts/hardhat.config.ts",
-    "verify": "TS_NODE_PROJECT=./libs/contracts/tsconfig.json npx hardhat verify 0x61C20Bc3d6D5C370F6e7a816E45E27FeAAc7Bd3D --config ./libs/contracts/hardhat.config.ts --network goerli",
-    "upgrade": "TS_NODE_PROJECT=./libs/contracts/tsconfig.json npx hardhat run ./libs/contracts/src/scripts/upgrade.ts --config ./libs/contracts/hardhat.config.ts --network goerli",
-    "update-merkle": "TS_NODE_PROJECT=./libs/contracts/tsconfig.json npx hardhat run ./libs/contracts/src/scripts/update-merkle.ts --config ./libs/contracts/hardhat.config.ts --network goerli",
+    "verify": "TS_NODE_PROJECT=./libs/contracts/tsconfig.json npx hardhat verify 0x61C20Bc3d6D5C370F6e7a816E45E27FeAAc7Bd3D --config ./libs/contracts/hardhat.config.ts --network mainnet",
+    "upgrade": "TS_NODE_PROJECT=./libs/contracts/tsconfig.json npx hardhat run ./libs/contracts/src/scripts/upgrade.ts --config ./libs/contracts/hardhat.config.ts --network mainnet",
+    "update-merkle": "TS_NODE_PROJECT=./libs/contracts/tsconfig.json npx hardhat run ./libs/contracts/src/scripts/update-merkle.ts --config ./libs/contracts/hardhat.config.ts --network mainnet",
     "whitelist": "node --experimental-modules ./libs/contracts/src/scripts/fetchWhitelist.mjs",
-    "airdrop": "TS_NODE_PROJECT=./libs/contracts/tsconfig.json npx hardhat run ./libs/contracts/src/scripts/airdrop.ts --config ./libs/contracts/hardhat.config.ts --network goerli"
+    "airdrop": "TS_NODE_PROJECT=./libs/contracts/tsconfig.json npx hardhat run ./libs/contracts/src/scripts/airdrop.ts --config ./libs/contracts/hardhat.config.ts --network mainnet"
   },
   "private": true,
   "dependencies": {

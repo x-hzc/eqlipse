@@ -1,4 +1,5 @@
 import { ethers, upgrades, run } from 'hardhat';
+import { stageOne, stageTwo, stageThree } from '@mint-page/whitelist-addresses';
 
 async function main() {
   const IMPLEMENTATION = 'Eqlipse';
@@ -28,12 +29,17 @@ async function main() {
         },
         {
           limit: 1,
-          price: ethers.utils.parseEther('0.1'),
+          price: ethers.utils.parseEther('0.085'),
           merkleTreeRoot: ethers.constants.HashZero,
         },
         {
           limit: 1,
-          price: ethers.utils.parseEther('0.1'),
+          price: ethers.utils.parseEther('0.085'),
+          merkleTreeRoot: ethers.constants.HashZero,
+        },
+        {
+          limit: 1,
+          price: ethers.utils.parseEther('0.085'),
           merkleTreeRoot: ethers.constants.HashZero,
         },
       ],
@@ -42,7 +48,8 @@ async function main() {
         name: 'Eqlipse',
         symbol: 'EQLIPSE',
         supply: 500,
-        prefix: '',
+        prefix:
+          'https://ipfs.io/ipfs/bafybeiftfnc3ngwka3gsy7k4rgw2an5cf3zcjjp6ztktqc5fpvznue25aa/',
         suffix: '.json',
       },
     },
