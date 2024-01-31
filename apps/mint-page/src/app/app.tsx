@@ -57,7 +57,7 @@ const stages = [
     addresses: stageTwo,
   },
   {
-    id: 3,
+    id: 4,
     functionName: 'multiStageMint',
     transactionName: 'Whitelist Mint',
     extensions: [
