@@ -165,7 +165,7 @@ export function App() {
           </div>
           <img src="/assets/images/distressed-line.png" alt="" />
         </div>
-        <div className=" mt-40"></div>
+        <div className=" mt-28"></div>
         {controller.currentStageId !== undefined && (
           <>
             {' '}
@@ -181,34 +181,35 @@ export function App() {
           </>
         )}
         <div className="px-4">
-          <div className="max-w-[700px] mx-auto mint-container rounded-2xl text-white px-4 py-0 grid md:grid-cols-2 gap-4 ">
-            <div className="order-2  md:order-1">
-              <div className="text-center uppercase mt-10 small-heading-style ">
-                {controller.currentStageId === multiStage.Disabled && (
-                  <>
-                    <span> Mint is not live yet</span> <br />
-                  </>
-                )}
+          <div className="max-w-[700px] mx-auto mint-container rounded-2xl text-white px-4 py-0 ">
+            <div className="grid md:grid-cols-2 gap-4 ">
+              <div className="order-2  md:order-1">
+                <div className="text-center uppercase mt-10 small-heading-style ">
+                  {controller.currentStageId === multiStage.Disabled && (
+                    <>
+                      <span> Mint is not live yet</span> <br />
+                    </>
+                  )}
 
-                {controller.currentStageId === multiStage.stageOne && (
-                  <span>VIP Members Stage</span>
-                )}
+                  {controller.currentStageId === multiStage.stageOne && (
+                    <span>VIP Members Stage</span>
+                  )}
 
-                {controller.currentStageId === multiStage.stageTwo && (
-                  <span>
-                    <span>Presale Stage</span>
-                  </span>
-                )}
+                  {controller.currentStageId === multiStage.stageTwo && (
+                    <span>
+                      <span>Presale Stage</span>
+                    </span>
+                  )}
 
-                {controller.currentStageId === multiStage.stageThree && (
-                  <span>FCFS Stage</span>
-                )}
+                  {controller.currentStageId === multiStage.stageThree && (
+                    <span>FCFS Stage</span>
+                  )}
 
-                {controller.currentStageId === multiStage.PublicMint && (
-                  <span>Public Mint</span>
-                )}
+                  {controller.currentStageId === multiStage.PublicMint && (
+                    <span>Public Mint</span>
+                  )}
 
-                {/* {controller.currentStageId !== multiStage.Disabled && (
+                  {/* {controller.currentStageId !== multiStage.Disabled && (
               <div>
                 {stageOneEligible ? (
                   <div className="text-lg mb-5">
@@ -233,69 +234,88 @@ export function App() {
                 )}
               </div>
             )} */}
-              </div>
-              {account ? (
-                <>
-                  <div className="text-center mt-4 heading-style">
-                    {stageOneEligible && (
-                      <div className="text-lg mb-5">
-                        <span>Eligible for VIP Members Stage</span>
-                      </div>
-                    )}
-                    {stageTwoEligible && (
-                      <div className="text-lg mb-5">
-                        <span>Eligible for Presale Stage</span>
-                      </div>
-                    )}
-                    {stageThreeEligible && (
-                      <div className="text-lg mb-5">
-                        <span>Eligible for FCFS Stage</span>
-                      </div>
-                    )}
-                    {!stageOneEligible &&
-                      !stageTwoEligible &&
-                      !stageThreeEligible && (
+                </div>
+                {account ? (
+                  <>
+                    <div className="text-center mt-4 heading-style">
+                      {stageOneEligible && (
                         <div className="text-lg mb-5">
-                          <span className="text-white">
-                            Eligible for public mint
-                          </span>
+                          <span>Eligible for VIP Members Stage</span>
                         </div>
                       )}
+                      {stageTwoEligible && (
+                        <div className="text-lg mb-5">
+                          <span>Eligible for Presale Stage</span>
+                        </div>
+                      )}
+                      {stageThreeEligible && (
+                        <div className="text-lg mb-5">
+                          <span>Eligible for FCFS Stage</span>
+                        </div>
+                      )}
+                      {!stageOneEligible &&
+                        !stageTwoEligible &&
+                        !stageThreeEligible && (
+                          <div className="text-lg mb-5">
+                            <span className="text-white">
+                              Eligible for public mint
+                            </span>
+                          </div>
+                        )}
+                    </div>
+                  </>
+                ) : (
+                  <div className="w-8/12 mx-auto">
+                    <ConnectButton
+                      account={account || ''}
+                      connect={connect}
+                      disconnect={deactivate}
+                      connectButtonClassNames="connect-btn-new"
+                      disconnectButtonClassNames=""
+                    ></ConnectButton>
                   </div>
-                  <div className="w-full mx-auto text-center">
-                    <MintForm
-                      containerClassName="hidden"
-                      buttonText="Mint"
-                      controller={controller}
-                      statusClassNames=""
-                      mintButtonClassNames="mint-btn"
-                      inputsControlClassNames="flex flex-row justify-between input-control"
-                      inputButtonsClassNames=""
-                      inputAmountClassNames=""
-                    />
-                    {/* {controller.currentStageId !== multiStage.Disabled && (
-                    <div>{controller.totalPrice} ETH</div>
-                  )} */}
-                  </div>
-                </>
-              ) : (
-                <div className="w-8/12 mx-auto">
-                  <ConnectButton
-                    account={account || ''}
-                    connect={connect}
-                    disconnect={deactivate}
-                    connectButtonClassNames="connect-btn-new"
-                    disconnectButtonClassNames=""
-                  ></ConnectButton>
+                )}
+              </div>
+              <div className="order-1 md:order-2 home-mint-section-mint-case-image">
+                <img
+                  src="/assets/images/box.png"
+                  className="mx-auto max-w-[200px]"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div className="w-full mx-auto text-center">
+              {controller.currentStageId !== multiStage.Disabled && (
+                <MintForm
+                  containerClassName="mint-updated"
+                  buttonText="Mint"
+                  controller={controller}
+                  statusClassNames="hidden"
+                  mintButtonClassNames="mint-btn"
+                  inputsControlClassNames="flex flex-row justify-between input-control"
+                  inputButtonsClassNames=""
+                  inputAmountClassNames=""
+                />
+              )}
+
+              {controller.status && (
+                <div className="text-center text-base mt-0">
+                  {controller.status}
                 </div>
               )}
-            </div>
-            <div className="order-1 md:order-2 home-mint-section-mint-case-image">
-              <img
-                src="/assets/images/box.png"
-                className="mx-auto max-w-[200px]"
-                alt=""
-              />
+
+              {controller.error && (
+                <div className="text-center text-base mt-0">
+                  {controller.error === 'Address is not whitelisted.'
+                    ? 'Address is not whitelisted for this stage.'
+                    : controller.error}
+                </div>
+              )}
+
+              {controller.currentStageId !== multiStage.Disabled && (
+                <div className="my-5">{controller.totalPrice} ETH</div>
+              )}
             </div>
           </div>
         </div>
