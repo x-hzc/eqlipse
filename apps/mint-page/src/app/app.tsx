@@ -149,7 +149,7 @@ export function App() {
             </div>
 
             <div className="flex justify-between space-x-4 mt-4">
-              <a href="https://opensea.com">
+              <a href="https://opensea.io/collection/eqlipse-genesis">
                 <img
                   className="max-w-[33px]"
                   src="/assets/images/opensea.png"
