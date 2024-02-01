@@ -157,6 +157,8 @@ body {
 .home-mint-section-mint-case-image {
   max-width: 250px;
   animation: float 2s ease-in-out infinite alternate;
+  width: 100%;
+  @apply mx-auto;
 }
 
 @keyframes float {
