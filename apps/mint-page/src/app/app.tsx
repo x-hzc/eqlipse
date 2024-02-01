@@ -175,7 +175,7 @@ export function App() {
               </div>
 
               <div className="flex justify-center items-center mb-10">
-                {controller.currentSupply} / {controller.maxSupply}
+                {controller.currentSupply} / 500
               </div>
             </div>
           </>
