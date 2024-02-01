@@ -207,7 +207,7 @@ export function App() {
 
                   {controller.currentStageId === multiStage.stageTwo && (
                     <span>
-                      <span>Presale Stage</span>
+                      <span>Shadow Presale Stage</span>
                     </span>
                   )}
 
@@ -303,7 +303,7 @@ export function App() {
                   controller={controller}
                   statusClassNames="hidden"
                   mintButtonClassNames="mint-btn"
-                  inputsControlClassNames="flex flex-row justify-between input-control"
+                  inputsControlClassNames="hidden"
                   inputButtonsClassNames=""
                   inputAmountClassNames=""
                 />
