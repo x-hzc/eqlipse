@@ -28,7 +28,7 @@ body {
 }
 
 .input-control {
-  display: flex;
+  display: none;
 }
 
 .video-container {
@@ -216,7 +216,7 @@ body {
 .mint-updated {
   display: flex;
   justify-content: center;
-  margin-top: -40px;
+
   z-index: 9999;
   position: relative;
   padding-bottom: 20px;
