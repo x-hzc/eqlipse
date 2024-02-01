@@ -111,6 +111,16 @@ export function App() {
   //   canDecreaseAmount: () => true,
   // };
 
+  const message = encodeURIComponent(
+    'I just minted my Eqlipse Power Source to become one of the Shadows!\n\n' +
+      'Looking forward to building in the Refinery.\n\n' +
+      '#jointheshadows'
+  );
+
+  const tweetUrl = 'https://pic.twitter.com/7u80FJXbeq';
+
+  const twitterIntentURL = `https://twitter.com/intent/tweet?text=${message}%20${tweetUrl}`;
+
   return (
     <div className="flex flex-col">
       <BackgroundVideo />
@@ -286,7 +296,7 @@ export function App() {
             </div>
 
             <div className="w-full mx-auto text-center">
-              {controller.currentStageId !== multiStage.Disabled && (
+              {controller.currentStageId !== multiStage.Disabled && account && (
                 <MintForm
                   containerClassName="mint-updated"
                   buttonText="Mint"
@@ -304,6 +314,12 @@ export function App() {
                   {controller.status}
                 </div>
               )}
+
+              <div className="text-center text-[#8ac0c6] text-base mt-2">
+                <a href={twitterIntentURL} target="_blank">
+                  TWEET YOUR SUCCESSFUL MINT!
+                </a>
+              </div>
 
               {controller.error && (
                 <div className="text-center text-base mt-0">
