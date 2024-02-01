@@ -314,12 +314,17 @@ export function App() {
                   {controller.status}
                 </div>
               )}
-
-              <div className="text-center text-[#8ac0c6] text-base mt-2">
-                <a href={twitterIntentURL} target="_blank">
-                  TWEET YOUR SUCCESSFUL MINT!
-                </a>
-              </div>
+              {controller.status.toLowerCase().includes('success') && (
+                <div className="text-center text-[#8ac0c6] text-base mt-2">
+                  <a
+                    href={twitterIntentURL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    TWEET YOUR SUCCESSFUL MINT!
+                  </a>
+                </div>
+              )}
 
               {controller.error && (
                 <div className="text-center text-base mt-0">
