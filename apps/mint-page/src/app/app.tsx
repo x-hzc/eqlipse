@@ -303,7 +303,7 @@ export function App() {
                   controller={controller}
                   statusClassNames="hidden"
                   mintButtonClassNames="mint-btn"
-                  inputsControlClassNames="hidden"
+                  inputsControlClassNames="flex flex-row justify-between input-control"
                   inputButtonsClassNames=""
                   inputAmountClassNames=""
                 />
@@ -334,7 +334,7 @@ export function App() {
                 </div>
               )}
 
-              {controller.currentStageId !== multiStage.Disabled && (
+              {controller.currentStageId !== multiStage.Disabled && account && (
                 <div className="my-5">{controller.totalPrice} ETH</div>
               )}
             </div>
