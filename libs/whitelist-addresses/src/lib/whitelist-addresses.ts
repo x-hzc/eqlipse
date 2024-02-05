@@ -993,7 +993,7 @@ const stageTwo = [
   '0xf02DD82D4F5062E00fCD55B4501055faA8f2fE2C',
 ];
 
-const stageThree = [
+const stageFour = [
   '0xA273CE61Db43647745C71F425ed8591F23e4FE13',
   '0x46BB2C90c2bFAAB19000de5E2fD6e29Eda89A5fE',
   '0x13c2b5AEdEFB9e8584A37B249fEe2e5BA716C194',
@@ -1445,4 +1445,9 @@ const stageThree = [
   '0xc1051bb0cbb212cb77d1f8163b275f7d33028483',
   '0x9578614bd52Ff257dF35B7303Aa9BeE0266Bc5Be',
 ];
+
+const combinedStages = [...stageOne, ...stageTwo, ...stageFour];
+
+const stageThree = [...new Set(combinedStages)];
+
 export { stageOne, stageTwo, stageThree };
